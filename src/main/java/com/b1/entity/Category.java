@@ -53,4 +53,7 @@ public class Category extends HttpServlet {
         }
     }
 
+    public void setCategoryId(int anInt) {
+
+    }
 }

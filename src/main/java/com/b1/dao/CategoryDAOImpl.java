@@ -32,6 +32,13 @@ public class CategoryDAOImpl {
         try{
             ArrayList<Category> allCategories = new ArrayList<>();
             ResultSet result = psAllCategories.executeQuery();
+
+            while(result.next()){
+                Category objCategory = new Category();
+                objCategory.setCategoryId(result.getInt(1));
+            }
+
+            return allCategories.iterator();
         }catch(SQLException e){
             e.printStackTrace();
             throw new NullPointerException("Unable to get all categories");
