@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="jar://$USER_HOME$/Documents/mysql-connector-j-9.7.0/mysql-connector-j-9.7.0.jar!/" dialect="GenericSQL" />
+  </component>
+</project>
