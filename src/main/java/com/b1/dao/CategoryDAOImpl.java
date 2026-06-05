@@ -16,7 +16,7 @@ public class CategoryDAOImpl {
     Connection connection;
     PreparedStatement psAllCategories;
 
-    public CategoryDAOImpl() {
+    public CategoryDAOImpl() throws  SQLException {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost/ecommerce_project", "root", "cdac");
@@ -44,7 +44,4 @@ public class CategoryDAOImpl {
             throw new NullPointerException("Unable to get all categories");
         }
     }
-
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
-    {}
 }
