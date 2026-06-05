@@ -10,7 +10,7 @@ import java.sql.*;
 import java.io.IOException;
 
 @WebServlet("/Category")
-public class Category extends HttpServlet {
+public class Category extends HttpServlet{
     private static final long serialVersionUID = 1L;
 
     @Override

@@ -11,7 +11,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class CategoryDAOImpl {
+public class CategoryDAOImpl implements CategoryDAO {
 
     Connection connection;
     PreparedStatement psAllCategories;
