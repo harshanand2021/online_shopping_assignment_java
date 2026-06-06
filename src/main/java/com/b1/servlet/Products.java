@@ -54,4 +54,18 @@ public class Products extends HttpServlet {
             e.printStackTrace();
         }
     }
+
+    public int getProductId() {
+
+        return 0;
+    }
+
+    public int getCategoryId() {
+
+        return 0;
+    }
+
+    public float getPrice() {
+        return 0.0f;
+    }
 }
