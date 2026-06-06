@@ -5,9 +5,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
-import java.io.IOException;
 
 @WebServlet("/Category")
 public class Category extends HttpServlet{
@@ -17,7 +17,7 @@ public class Category extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws IOException {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/b1","root","root");
+            try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce_project","root","cdac");
                 PreparedStatement psAllCategories = connection.prepareStatement("Select * From Category")){
                 try(ResultSet result = psAllCategories.executeQuery()){
                     PrintWriter out = response.getWriter();

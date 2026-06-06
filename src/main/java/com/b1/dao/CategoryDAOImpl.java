@@ -1,12 +1,8 @@
 package com.b1.dao;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
 import com.b1.entity.Category;
+import jakarta.servlet.ServletContext;
 
-import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,7 +12,7 @@ public class CategoryDAOImpl implements CategoryDAO {
     Connection connection;
     PreparedStatement psAllCategories;
 
-    public CategoryDAOImpl() throws  SQLException {
+    public CategoryDAOImpl(ServletContext context) throws  SQLException {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost/ecommerce_project", "root", "cdac");
@@ -42,6 +38,15 @@ public class CategoryDAOImpl implements CategoryDAO {
         }catch(SQLException e){
             e.printStackTrace();
             throw new NullPointerException("Unable to get all categories");
+        }
+    }
+
+    @Override
+    public void close() {
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

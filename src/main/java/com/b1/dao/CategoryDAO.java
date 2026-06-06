@@ -8,4 +8,6 @@ import java.util.Iterator;
 public interface CategoryDAO {
 
     public Iterator<Category> getAllCategories() throws SQLException;
+
+    public void close();
 }
