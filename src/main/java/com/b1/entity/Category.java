@@ -52,8 +52,4 @@ public class Category extends HttpServlet{
             e.printStackTrace();
         }
     }
-
-    public void setCategoryId(int anInt) {
-
-    }
 }
